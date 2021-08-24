@@ -1,0 +1,50 @@
+﻿@model IEnumerable<BlogApp.Models.Post>
+
+@{
+    ViewData["Title"] = "IndexPending";
+}
+
+<h2>Posts</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SubmitDateTime)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Content)
+            </th>
+            <th>Author</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Id)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SubmitDateTime)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Content)
+                </td>
+                <td>writer</td>
+                <td>
+                    @if (!item.Approved) { 
+                        <a asp-action="Approve" asp-route-id="@item.Id">Approve</a> 
+                        <a asp-action="Reject" asp-route-id="@item.Id">Reject</a> 
+                    }
+                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a> 
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+

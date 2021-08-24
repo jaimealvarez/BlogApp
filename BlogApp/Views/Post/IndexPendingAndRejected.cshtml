@@ -1,0 +1,70 @@
+﻿@model IEnumerable<BlogApp.Models.Post>
+
+@{
+    ViewData["Title"] = "IndexPendingAndRejected";
+}
+
+<h2>My Posts</h2>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SubmitDateTime)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Content)
+            </th>
+            <th>Status</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Id)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SubmitDateTime)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Content)
+                </td>
+                <td>
+                    @if (!item.Submitted)
+                    {
+                        <p>Created</p>
+                    }
+                    else if (item.Pending)
+                    {
+                        <p>Pending publish approval</p>
+                    }
+                    else if (!item.Approved)
+                    {
+                        <p>Rejected</p>
+                    }
+                    else
+                    {
+                        <p>Published</p>
+                    }
+                </td>
+                <td>
+                    @if (!item.Submitted)
+                    {
+                        <a asp-action="Submit" asp-route-id="@item.Id">Submit</a>
+                        <a asp-action="Edit" asp-route-id="@item.Id">Edit</a>
+                    }
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
