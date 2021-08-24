@@ -2,6 +2,45 @@ Hi people from Zemoga!
 
 This is my solution to the technical test
 
+# INSTALLATION
+
+**Software prerequisites**
+
+* Windows 10 Home or Pro
+* Visual Studio 2017 or newer
+* Internet access 
+
+**Steps to build**
+
+The source code can be obtained using the provided zip file or fetched using any Git tool. The application includes all the libraries needed so it can be executed using F5 once the solution file is loaded. Steps:
+
+1. Download, fetch from GitHub using the command:
+```
+git clone https://github.com/jaimealvarez/BlogApp.git
+```	
+2. Open the solution file BlogApp.sln from the /BlogApp folder using Visual Studio 2017 or newer.
+
+3. The only additional component used in the solution is the InMemory database. If not already installed in Visual Studio this packaged can be easily obtained following these steps:
+
+* In the Visual Studio menu go to Tools -> Manage Nuget Packages -> Manage NuGet Packages for the solution...
+* Making sure that the package source nuget.org is configured, select Browse and enter Microsoft.EntityFrameworkCore.InMemory in the search box
+* Select the package that appears (use the latest possible version)
+* At the right hand side select BlogApp and click the Install button
+
+4. Run the solution using F5.
+
+**Time spent**
+
+I spent approximately 20 hours to build, test and debug the application, including the time spent writing this document.
+
+**Sample credentials**
+
+There are two built-in users:
+
+* username: writer, password: abc123, role: writer
+* username: editor, password: abc123, role: editor
+
+
 # SOLUTION TO PART I
 
 **Access**
@@ -100,14 +139,3 @@ This is a PUT endpoint and receives a JSON message with the following structure:
 	"approved":true/false
 }
 ```
-
-
-# INSTALLATION
-
-The source code can be obtained using the provided zip file or fetched using any Git tool. The application includes all the libraries needed so it can be executed using F5 once the solution file is loaded. Steps:
-
-1. Download, fetch from GitHub or unzip the folder
-	
-2. Open the solution file BlogApp.sln from the /BlogApp folder using Visual Studio 2017 or newer
-
-3. Run the solution using F5
