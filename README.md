@@ -31,7 +31,7 @@ git clone https://github.com/jaimealvarez/BlogApp.git
 
 **Time spent**
 
-I spent approximately 20 hours to build, test and debug the application, including the time spent writing this document.
+I spent approximately 12 hours to build, test and debug the application, including the time spent writing this document.
 
 **Sample credentials**
 
