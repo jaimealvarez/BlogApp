@@ -108,6 +108,6 @@ The source code can be obtained using the provided zip file or fetched using any
 
 1. Download, fetch from GitHub or unzip the folder
 	
-2. Open the solution file BlogApp.sln using Visual Studio 2017 or newer
+2. Open the solution file BlogApp.sln from the /BlogApp folder using Visual Studio 2017 or newer
 
 3. Run the solution using F5
