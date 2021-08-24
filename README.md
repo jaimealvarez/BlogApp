@@ -31,7 +31,7 @@ git clone https://github.com/jaimealvarez/BlogApp.git
 
 **Time spent**
 
-I spent approximately 12 hours to build, test and debug the application, including the time spent writing this document.
+I spent approximately 12 hours in building, testing and debugging the application, including the time spent writing this document.
 
 **Sample credentials**
 
@@ -53,7 +53,7 @@ The web application was developed using .Net Core 3.1
 
 **Home Page**
 
-The home page shows the approved posts, if any.
+The home page shows the approved posts, if any. Every post shows its content, approval date and author. Posts in the home page are shown in descending order of the approval date (most recently approved posts are shown first).
 
 **Users**
 
@@ -83,7 +83,7 @@ After the creation, edition or submition of a post the list updates automaticall
 
 **Editor requirements**
 
-The editor user is shown a list of pending posts. She has three options: approve, reject or delete.
+The editor user is shown a list of pending posts. Posts for the editor are shown in ascending order of the submittion date (most recently submitted posts are shown last). She has three options for every post: approve, reject or delete.
 
 When the editor approves a post it remains in the list of pending posts but cannot be accepted o rejected again.
 
@@ -108,7 +108,7 @@ The application uses the Microsoft.EntityFrameworkCore components as its ORM eng
 **Database**
 
 The application uses the Microsoft.EntityFrameworkCore.InMemory database as the data does not need to persist beyond this technical test.
-This database is really simple to configure and access and offers all the features needed in this scenario.
+This database is really simple to configure and access, and offers all the features needed in this scenario.
 There is no database script as all structures are automatically created in run-time.
 
 # SOLUTION TO PART II
